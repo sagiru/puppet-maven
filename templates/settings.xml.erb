@@ -23,7 +23,12 @@
     <server>
       <id><%= server['id'] %></id>
       <username><%= server['username'] %></username>
+      <%- unless server['password'].nil? or server['password'].empty? -%>
       <password><%= server['password'] %></password>
+      <%- end -%>
+      <%- unless server['privateKey'].nil? or server['privateKey'].empty? -%>
+      <privateKey><%= server['privateKey'] %></privateKey>
+      <%- end -%>
     </server>
 <% end -%>
   </servers>
